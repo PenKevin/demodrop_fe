@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
 
-function SignUp() {
+function MSignUp() {
     // state voor het formulier
     const [firstname, setFirstname] = useState('');
     const [lastname, setLastname] = useState('');
@@ -158,10 +158,10 @@ function SignUp() {
                     Registreren
                 </button>
             </form>
-            <p>Maak je deel uit van het managementteam? Meld je dan <Link to="/msign-up">hier</Link> aan.</p>
+            <p>Maak je geen deel uit van het managementteam? Meld je dan <Link to="/msign-up">hier</Link> aan.</p>
         </section>
     )
 
 }
 
-export default SignUp;
+export default MSignUp;

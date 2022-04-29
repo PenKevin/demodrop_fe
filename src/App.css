@@ -1,38 +1,41 @@
-.App {
-  text-align: center;
+body {
+    background-color: #333;
+    color: orange;
+    padding: 0px;
+    font-family: Arial;
+    text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/*Algemene formulier-styling*/
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #faeab3;
+    padding: 32px;
+    max-width: 300px;
+    border-radius: 4px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+form label {
+    margin: 4px 0;
+    font-weight: bold;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+form input {
+    width: 100%;
+    padding: 4px 8px;
+    margin: 6px 0;
 }
 
-.App-link {
-  color: #61dafb;
+h2 {
+    margin: 32px 0 24px 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.content {
+    margin: 32px;
+}
+
+.form-button {
+    width: 100%;
 }

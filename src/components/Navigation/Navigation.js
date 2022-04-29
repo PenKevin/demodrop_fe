@@ -1,41 +1,53 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
+import './Navigation.css';
+import logo from '../../assets/oie_transparent.png';
+import {AuthContext} from "../../context/AuthContext";
 
-function Navigation({ isAuth, toggleAuth }) {
+function Navigation() {
+    const { isAuth, logout } = useContext(AuthContext);
     const history = useHistory();
-
-    function signOut() {
-        toggleAuth(false);
-        history.push('/')
-    }
 
     return (
         <nav>
+            <img src={logo} alt="Demo Drop logo"/>
             <ul>
+                <li className="image-logo">
+
+                </li>
                 <li>
                     <NavLink to="/">
                         Home
                     </NavLink>
                 </li>
-                {isAuth === true
-                    ? <>
+                {isAuth ?
+                    <>
                         <li>
-                            <NavLink to="/blogposts">
-                                Blogposts
+                            <NavLink onClick={() => history.push('/overview')} to="/overview">
+                                Portal
                             </NavLink>
                         </li>
-                        <li>
-                            <button type="button" onClick={signOut}>
+                        <li onClick={logout}>
+                            <NavLink to="/">
                                 Uitloggen
-                            </button>
+                            </NavLink>
                         </li>
                     </>
                     :
-                    <li>
-                        <NavLink to="/login">
-                            Login
-                        </NavLink>
-                    </li>}
+                    <>
+                        <li>
+                            <NavLink to="/login">
+                                Login
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/sign-up">
+                                Aanmelden
+                            </NavLink>
+                        </li>
+                    </>
+                }
+
             </ul>
         </nav>
     );
